@@ -13,14 +13,13 @@ let connect = function(){
 
     let db = mongoose.connection;
 
-    db.once('open', (success_event)=>{
+    db.once('open', ()=>{
         console.log('Connect to DB success!');
-        console.log(success_event)
     })
     
     db.on('error', (error_event)=>{
         console.log("Connect to DB failed")
-        console.log(error_event)
+        console.log(error_event);
     })
 
     return db;
